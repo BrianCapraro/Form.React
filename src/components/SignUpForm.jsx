@@ -14,6 +14,9 @@ export default function SignUpForm({ setToken }){
         const response = await fetch(url)
         const result = response.json()
         setToken(result.token);
+        console.log(result.token)
+
+        
     } catch(error){
         console.log(error)
     }
