@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function SignUpForm({ setToken }){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [successMessage, setSuccessMessage] = useState(null);
     const [error, setError] = useState(null);
 
     async function handleSubmit(event){
@@ -21,6 +22,7 @@ export default function SignUpForm({ setToken }){
         const result = await response.json()
         console.log(result)
         setToken(result.token);
+        setSuccessMessage(result.message)
         
 
         
@@ -31,6 +33,7 @@ export default function SignUpForm({ setToken }){
     return (
     <>
         <h2>Sign up</h2>
+        {successMessage && <p>{successMessage}</p>}
         <form onSubmit={handleSubmit}>
             <label>
                Username: <input value={username} onChange={(e) => setUsername(e.target.value)}/>
