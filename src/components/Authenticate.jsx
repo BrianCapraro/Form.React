@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../App.css'
 
 export default function Authenticate({ token }) {
     const [successMessage, setSuccessMessage] = useState(null);
