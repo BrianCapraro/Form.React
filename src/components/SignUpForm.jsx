@@ -27,13 +27,14 @@ export default function SignUpForm({ setToken }){
 
         
     } catch(error){
-        console.log(error)
+        setError(error.message)
     }
     }
     return (
     <>
         <h2>Sign up</h2>
         {successMessage && <p>{successMessage}</p>}
+        {error && <p>{error}</p>}
         <form onSubmit={handleSubmit}>
             <label>
                Username: <input value={username} onChange={(e) => setUsername(e.target.value)}/>

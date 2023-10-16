@@ -4,6 +4,7 @@ import '../App.css'
 export default function Authenticate({ token }) {
     const [successMessage, setSuccessMessage] = useState(null);
     const [error, setError] = useState(null);
+    console.log("Token", token)
   
     async function handleClick() {
       try {
